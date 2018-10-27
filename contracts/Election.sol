@@ -1,9 +1,9 @@
 pragma solidity ^0.4.11;
 
 contract Election{
- string public candidate;//declariing it public provides getter automatically in solidity
+ //string public candidate;//declariing it public provides getter automatically in solidity
   //Model a candidate
-  struct candidate{
+  struct Candidate{
     uint id;
     string name;
     uint voteCount;
@@ -14,16 +14,16 @@ contract Election{
 // no way to determine the size f the mapping
 
 // store candidate Count
-uint public candidatesCount; //default value 0
+ uint public candidatesCount; //default value 0
 function Election() public   //constructor
   {
 //  candidate = "Canditate 1";
-   addCandidate("Candidate 1")
-   addCandidate("Candidate 2")
+   addCandidate("Candidate 1");
+   addCandidate("Candidate 2");
 
   }
 function addCandidate (string _name) private{
    candidatesCount++;
-   candidate[candidatesCount]= Canditate(candidatesCount,_name,0);
+   candidates[candidatesCount]= Candidate(candidatesCount,_name,0);
  }
 }
