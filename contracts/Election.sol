@@ -29,6 +29,12 @@ function addCandidate (string _name) private{
    candidates[candidatesCount]= Candidate(candidatesCount,_name,0);
  }
  function vote(uint _candidateId) public{
+   //require that they haven,t voted before
+   require(!voters[msg.sender]); // if require is executed to truue rest funcntion is executed otherwise not
+
+   //require a valid candidateTemplate
+  require(_candidateId>0 && _candidateId <= candidatesCount);
+
    //record that voter has voted
   //solidity allows to pass meta data that is msg.sender
   voters[msg.sender]=true;   //update candidate vote count
