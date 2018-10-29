@@ -17,9 +17,10 @@ contract Election{
 
 // store candidate Count
  uint public candidatesCount; //default value 0
+
  //voted event
  event votedEvent(uint indexed_candidateId);
- 
+
 function Election() public   //constructor
   {
 //  candidate = "Canditate 1";
